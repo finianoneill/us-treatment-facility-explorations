@@ -1,5 +1,7 @@
+var bayAreaCoords = [37.8272, 122.2913];
+
 var myMap = L.map("map", {
-  center: [37.7749, -122.4194],
+  center: bayAreaCoords,
   zoom: 13
 });
 
