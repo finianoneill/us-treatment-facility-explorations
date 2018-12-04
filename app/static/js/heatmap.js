@@ -1,6 +1,6 @@
 var myMap = L.map("map", {
   center: [37.7749, -122.4194],
-  zoom: 13
+  zoom: 9
 });
 
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -10,7 +10,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+var url = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
 
 d3.json(url, function(response) {
 
@@ -19,15 +19,15 @@ d3.json(url, function(response) {
   var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+    var location = [response[i].lat, response[i].lng];
 
     if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
+      heatArray.push(location);
     }
   }
 
   var heat = L.heatLayer(heatArray, {
-    radius: 20,
+    radius: 25,
     blur: 35
   }).addTo(myMap);
 
