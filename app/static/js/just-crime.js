@@ -1,8 +1,8 @@
-var bayAreaCoords = [37.8272, 122.2913];
+var bayAreaCoords = [37.7749, -122.4194];
 
 var myMap = L.map("map", {
   center: bayAreaCoords,
-  zoom: 13
+  zoom: 9
 });
 
 // Adding tile layer
@@ -13,17 +13,18 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-var newtry = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=1000";
+var newtry = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
 
 d3.json(newtry, function(response) {
 
   console.log(response);
 
   for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+    var location = [response[i].lat, response[i].lng];
 
     if (location) {
-      L.marker([location.coordinates[1], location.coordinates[0]]).addTo(myMap);
+      console.log("location added")
+      L.marker(location).addTo(myMap);
     }
   }
 
