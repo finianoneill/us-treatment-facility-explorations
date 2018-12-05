@@ -7,18 +7,20 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
   maxZoom: 18,
   id: "mapbox.streets",
-  accessToken: API_KEY
+  accessToken: "pk.eyJ1IjoiZmluaWFuZG9uZWlsbCIsImEiOiJjanAzZmRwMnQwaGZ2M2tvYm5nNGNqcmE4In0.XAVtWcAaSFjXYCZRxkA6iw"
 }).addTo(myMap);
 
-var url = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
+// var url = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
 
 // Read the file into a variable
-var contents = "static/js/hospital_list_bay_area_reformat.js";
+// var contents = "static/js/hospital_list_bay_area_reformat.js";
+var contents = "/facilities_data";
 
 // read in JSON
-// var treatmentCenterJSON = JSON.parse(contents);
 
 d3.json(contents, function(response) {
+
+  var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
     var location = [response[i].lat, response[i].lng];
@@ -33,5 +35,4 @@ d3.json(contents, function(response) {
     blur: 35
   }).addTo(myMap);
 
-	};
 });
