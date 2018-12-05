@@ -12,11 +12,14 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var url = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
 
-d3.json(url, function(response) {
+// Read the file into a variable
+//var contents = fs.readFileSync('./../../../analyses/Outputs/hospital_list_bay_area_reformat.js');
+var contents = "static/js/hospital_list_bay_area_reformat.js";
 
-  console.log(response);
+// read in JSON
+// var treatmentCenterJSON = JSON.parse(contents);
 
-  var heatArray = [];
+d3.json(contents, function(response) {
 
   for (var i = 0; i < response.length; i++) {
     var location = [response[i].lat, response[i].lng];
@@ -31,4 +34,5 @@ d3.json(url, function(response) {
     blur: 35
   }).addTo(myMap);
 
+	};
 });
