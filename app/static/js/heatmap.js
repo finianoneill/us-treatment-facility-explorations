@@ -1,6 +1,6 @@
 var myMap = L.map("map", {
-  center: [37.7, -122.15],
-  zoom: 10
+  center: [37.7749, -122.4194],
+  zoom: 9
 });
 
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -10,8 +10,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-// require file library
-// var fs = require('fs');
+var url = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
 
 // Read the file into a variable
 //var contents = fs.readFileSync('./../../../analyses/Outputs/hospital_list_bay_area_reformat.js');
@@ -22,21 +21,18 @@ var contents = "static/js/hospital_list_bay_area_reformat.js";
 
 d3.json(contents, function(response) {
 
-	console.log(response);
-	var treatmentCenterArray = [];
+  for (var i = 0; i < response.length; i++) {
+    var location = [response[i].lat, response[i].lng];
 
-	for (var i = 0; i < response.length; i++) {
-		var lat = response[i].lat;
-		var lng = response[i].lng;
-		var facilityName = response[i].facilityName;
+    if (location) {
+      heatArray.push(location);
+    }
+  }
 
-		if (lat) {
-			treatmentCenterArray.push([lat, lng]);
-			var treatmentCenterMarker = L.marker([lat, lng], {
-				draggable: true,
-				title: facilityName
-			}).addTo(myMap);
-		};
+  var heat = L.heatLayer(heatArray, {
+    radius: 25,
+    blur: 35
+  }).addTo(myMap);
 
 	};
 });
