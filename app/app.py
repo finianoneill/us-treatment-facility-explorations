@@ -37,16 +37,31 @@ def index():
     return render_template("index.html")
 
 
-#@app.route("/names")
-#def names():
-#    """Return a list of sample names."""
+@app.route("/facilities_data")
+def facilities():
+    """Return all of the facilities data."""
 
-#    # Use Pandas to perform the sql query
-#    stmt = db.session.query(Samples).statement
-#    df = pd.read_sql_query(stmt, db.session.bind)
-#
-#    # Return a list of the column names (sample names)
-#    return jsonify(list(df.columns)[2:])
+    # Perform sql query to pull all treatment facility data
+    results = db.session.query(Treatment_Facilities).all()
+
+    json_list = []
+    for row in results:
+        current_row = {}
+        current_row["id"] = row.id
+        current_row["city"] = row.city
+        current_row["facilityName"] = row.facilityName
+        current_row["providerNumber"] = row.providerNumber
+        current_row["stateCode"] = row.stateCode
+        current_row["streetAddress"] = row.streetAddress
+        current_row["phoneNumber"] = row.phoneNumber
+        current_row["zipCode"] = row.zipCode
+        current_row["lat"] = row.lat
+        current_row["lng"] = row.lng
+
+        json_list.append(current_row)
+    
+    # Return all of the data from the dataframe
+    return jsonify(json_list)
 
 
 @app.route("/treatment_facilities/<facility_id>")
