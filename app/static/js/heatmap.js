@@ -1,6 +1,6 @@
 var myMap = L.map("map", {
-  center: [37.7749, -122.4194],
-  zoom: 13
+  center: [37.7, -122.15],
+  zoom: 10
 });
 
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -10,25 +10,33 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-var url = "https://data.sfgov.org/resource/cuks-n6tp.json?$limit=10000";
+// require file library
+// var fs = require('fs');
 
-d3.json(url, function(response) {
+// Read the file into a variable
+//var contents = fs.readFileSync('./../../../analyses/Outputs/hospital_list_bay_area_reformat.js');
+var contents = "static/js/hospital_list_bay_area_reformat.js";
 
-  console.log(response);
+// read in JSON
+// var treatmentCenterJSON = JSON.parse(contents);
 
-  var heatArray = [];
+d3.json(contents, function(response) {
 
-  for (var i = 0; i < response.length; i++) {
-    var location = response[i].location;
+	console.log(response);
+	var treatmentCenterArray = [];
 
-    if (location) {
-      heatArray.push([location.coordinates[1], location.coordinates[0]]);
-    }
-  }
+	for (var i = 0; i < response.length; i++) {
+		var lat = response[i].lat;
+		var lng = response[i].lng;
+		var facilityName = response[i].facilityName;
 
-  var heat = L.heatLayer(heatArray, {
-    radius: 20,
-    blur: 35
-  }).addTo(myMap);
+		if (lat) {
+			treatmentCenterArray.push([lat, lng]);
+			var treatmentCenterMarker = L.marker([lat, lng], {
+				draggable: true,
+				title: facilityName
+			}).addTo(myMap);
+		};
 
+	};
 });
