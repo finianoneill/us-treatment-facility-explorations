@@ -13,7 +13,6 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 var url = "../analyses/Outputs/hospital_list_bay_area_reformat.js";
 
 // Read the file into a variable
-//var contents = fs.readFileSync('./../../../analyses/Outputs/hospital_list_bay_area_reformat.js');
 var contents = "static/js/hospital_list_bay_area_reformat.js";
 
 // read in JSON
