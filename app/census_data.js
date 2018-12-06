@@ -310,9 +310,9 @@ var data = [
     "Number of facilities": 168,
     "Total Population": 5735728,
     "Median Age": 38.711875000000006,
-    "Average Household Income": 96265,
-    "Poverty Count": 89321,
-    "Per Capita Income": 59508
+    "Average Household Income": 82786.225,
+    "Poverty Count": 776863,
+    "Per Capita Income": 64700.68125
   },
   {
     "City": "SAN JOSE",

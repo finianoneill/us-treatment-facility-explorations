@@ -454,10 +454,13 @@ var cities = [
 var names = [];
 var numOfFacilities = ['Number of Facilities'];
 var totalPop = ['Total Population'];
-var popPerFacility = ['Population per facility'];
 var medianAge = ['Median Age'];
 var avgHouseholdIncome = ['Average Household Income'];
+var povertyCount = ['Poverty Count'];
+var perCapitaIncome = ['Per Capita Income'];
 
+var popPerFacility = ['Population per facility'];
+var povertyRate = ['Poverty rate per capita'];
 // Iterate through each city object
 cities.forEach((city) => {
   // Iterate through each key and value
@@ -478,18 +481,27 @@ cities.forEach((city) => {
   else if (key==="Average Household Income"){
     avgHouseholdIncome.push(value);
   }
+  else if (key==="Poverty Count"){
+    povertyCount.push(value);
+  }
+  else{
+    perCapitaIncome.push(value);
+  }
   });
 });
 
 for (i=1; i <numOfFacilities.length; i++){
   popPerFacility.push(totalPop[i]/numOfFacilities[i]);
+  povertyRate.push(povertyCount[i]/totalPop[i]);
 }
+
+
 
 var chart = c3.generate({
     bindto: '#chart',
     data: {
       columns: [
-       numOfFacilities, totalPop, popPerFacility, medianAge, avgHouseholdIncome
+       numOfFacilities, totalPop, popPerFacility, medianAge, avgHouseholdIncome, povertyCount, perCapitaIncome
       ],
       type: 'bar',
       height: 800
