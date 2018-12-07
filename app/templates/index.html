@@ -1,40 +1,35 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+<!DOCTYPE html>
+<html lang="en-us">
 
+  <head>
+    <meta charset="UTF-8">
+    <title>Cell Towers</title>
 
-    </div>
-    <ul class="nav navbar-nav">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="./static/css/style.css" />
 
+  </head>
 
-        <!-- INSERT HOME PAGE REF -->
-        <li class="active"></li>
-        <li><a href="http://127.0.0.1:5000/"><strong>HOME</strong></a></li>
-        
-        <li><a href="http://127.0.0.1:5000/data">Data</a></li>
-        <li><a href="http://127.0.0.1:5000/facilities_data.html">Data JSON</a></li>
-<li>
-    <form>
-<div class="tipue_search_group" id="tipue_search_content" style="padding-top: 10px;">
-            <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button
-                type="submit" class="tipue_search_button">
-                <div class="tipue_search_icon">&#9906;</div>
-            </button>
-        </div>
-    </form>
+  <body>
 
-    <div id="tipue_search_content"></div>
+    <div id="map"></div>
 
+    <!-- API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
 
-}
+    <!-- JS -->
+    <!-- <script type="text/javascript" src="static/js/just-crime.js"></script> -->
+    <script type="text/javascript" src="static/js/heatmap.js"></script>
 
-
-
-        <script>
-            $(document).ready(function () {
-                $('#tipue_search_input').tipuesearch();
-            });
-        </script>
-
-
-</nav>
+    <!-- Leaflet heatmap plugin-->
+    <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
    
+
+
+
+
+  </body>
+
+</html>

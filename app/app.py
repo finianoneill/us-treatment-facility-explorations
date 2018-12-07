@@ -39,6 +39,11 @@ def setup():
     db.create_all()
 
 
+@app.route("/charts")
+def charts():
+    """Show the heatmap."""
+    return render_template("charts.html")
+
 @app.route("/p3dropdown")
 def dropdown():
     """Hosts the dd html so JQuery works"""
