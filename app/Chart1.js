@@ -501,7 +501,7 @@ var chart = c3.generate({
     bindto: '#chart',
     data: {
       columns: [
-       numOfFacilities, totalPop, popPerFacility, medianAge, avgHouseholdIncome, povertyCount, perCapitaIncome, povertyRate
+       numOfFacilities, totalPop, popPerFacility, medianAge, avgHouseholdIncome, povertyCount, perCapitaIncome,
       ],
       type: 'bar',
       height: 800
