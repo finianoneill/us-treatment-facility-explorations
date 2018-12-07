@@ -1,453 +1,553 @@
 var cities = [
   {
+    "": 0,
     "City": "ALAMEDA",
+    "Median Age": 39.4,
+    "Average Income": 69076,
+    "Per Capita Income": 38185,
     "Number of facilities": 1,
     "Total Population": 61639,
-    "Median Age": 39.4,
-    "Average Household Income": 69076,
     "Poverty Count": 7125,
-    "Per Capita Income": 38185
+    "Location": [37.77, -122.24]
   },
   {
+    "": 1,
     "City": "ANTIOCH",
+    "Median Age": 33.75,
+    "Average Income": 70940,
+    "Per Capita Income": 25201.5,
     "Number of facilities": 7,
-    "Total Population": 396655,
-    "Median Age": 33.857142857142854,
-    "Average Household Income": 63659.857142857145,
-    "Poverty Count": 64258,
-    "Per Capita Income": 24125.14285714286
+    "Total Population": 104351,
+    "Poverty Count": 15344,
+    "Location": [38, -121.8]
   },
   {
+    "": 2,
     "City": "BERKELEY",
+    "Median Age": 33.9,
+    "Average Income": 58603.83333,
+    "Per Capita Income": 37430.16667,
     "Number of facilities": 8,
-    "Total Population": 98406,
-    "Median Age": 36.45,
-    "Average Household Income": 67640.375,
-    "Poverty Count": 13042,
-    "Per Capita Income": 45328.875
+    "Total Population": 122448,
+    "Poverty Count": 10876,
+    "Location": [37.87, -122.27]
   },
   {
+    "": 3,
     "City": "BURLINGAME",
+    "Median Age": 41.9,
+    "Average Income": 109775,
+    "Per Capita Income": 74474,
     "Number of facilities": 13,
-    "Total Population": 539240,
-    "Median Age": 41.89999999999999,
-    "Average Household Income": 109775,
-    "Poverty Count": 32305,
-    "Per Capita Income": 74474
+    "Total Population": 41480,
+    "Poverty Count": 2485,
+    "Location": [37.57, -122.34]
   },
   {
+    "": 4,
     "City": "CAMPBELL",
-    "Number of facilities": 4,
-    "Total Population": 180748,
     "Median Age": 37.3,
-    "Average Household Income": 87204,
-    "Poverty Count": 13368,
-    "Per Capita Income": 44023
+    "Average Income": 87204,
+    "Per Capita Income": 44023,
+    "Number of facilities": 4,
+    "Total Population": 45187,
+    "Poverty Count": 3342,
+    "Location": [37.28, -121.95]
   },
   {
+    "": 5,
     "City": "CONCORD",
-    "Number of facilities": 12,
-    "Total Population": 337401,
     "Median Age": 31.5,
-    "Average Household Income": 47313,
-    "Poverty Count": 67149,
-    "Per Capita Income": 21096
+    "Average Income": 47313,
+    "Per Capita Income": 21096,
+    "Number of facilities": 12,
+    "Total Population": 37489,
+    "Poverty Count": 7461,
+    "Location": [37.97, -122.03]
   },
   {
+    "": 6,
     "City": "DALY CITY",
-    "Number of facilities": 3,
-    "Total Population": 184773,
     "Median Age": 39.6,
-    "Average Household Income": 76978,
-    "Poverty Count": 14694,
-    "Per Capita Income": 30658
+    "Average Income": 76978,
+    "Per Capita Income": 30658,
+    "Number of facilities": 3,
+    "Total Population": 61591,
+    "Poverty Count": 4898,
+    "Location": [37.68, -122.47]
   },
   {
+    "": 7,
     "City": "DUBLIN",
+    "Median Age": 36.1,
+    "Average Income": 114812,
+    "Per Capita Income": 42534,
     "Number of facilities": 1,
     "Total Population": 47384,
-    "Median Age": 36.1,
-    "Average Household Income": 114812,
     "Poverty Count": 1634,
-    "Per Capita Income": 42534
+    "Location": [37.7, -121.93]
   },
   {
+    "": 8,
     "City": "EMERYVILLE",
-    "Number of facilities": 2,
-    "Total Population": 52576,
     "Median Age": 36.4,
-    "Average Household Income": 52787,
-    "Poverty Count": 8614,
-    "Per Capita Income": 36714
+    "Average Income": 52787,
+    "Per Capita Income": 36714,
+    "Number of facilities": 2,
+    "Total Population": 26288,
+    "Poverty Count": 4307,
+    "Location": [37.83, -122.28]
   },
   {
+    "": 9,
     "City": "FAIRFIELD",
+    "Median Age": 36.3,
+    "Average Income": 74044.5,
+    "Per Capita Income": 30579,
     "Number of facilities": 4,
-    "Total Population": 178747,
-    "Median Age": 38,
-    "Average Household Income": 83360.25,
-    "Poverty Count": 18035,
-    "Per Capita Income": 34560.5
+    "Total Population": 105627,
+    "Poverty Count": 14061,
+    "Location": [38.24, -122.04]
   },
   {
+    "": 10,
     "City": "FREMONT",
+    "Median Age": 35.95,
+    "Average Income": 86473,
+    "Per Capita Income": 35638,
     "Number of facilities": 33,
-    "Total Population": 2087694,
-    "Median Age": 35.28181818181818,
-    "Average Household Income": 86137,
-    "Poverty Count": 136449,
-    "Per Capita Income": 34746.454545454544
+    "Total Population": 231705,
+    "Poverty Count": 93050,
+    "Location": [37.54, -121.98]
   },
   {
+    "": 11,
     "City": "GILROY",
-    "Number of facilities": 3,
-    "Total Population": 174738,
     "Median Age": 33.4,
-    "Average Household Income": 81037,
-    "Poverty Count": 25113,
-    "Per Capita Income": 29889
+    "Average Income": 81037,
+    "Per Capita Income": 29889,
+    "Number of facilities": 3,
+    "Total Population": 58246,
+    "Poverty Count": 8371,
+    "Location": [37, -121.56]
   },
   {
+    "": 12,
     "City": "HAYWARD",
+    "Median Age": 35,
+    "Average Income": 62197.33333,
+    "Per Capita Income": 25071,
     "Number of facilities": 9,
-    "Total Population": 426121,
-    "Median Age": 35.833333333333336,
-    "Average Household Income": 64627.555555555555,
-    "Poverty Count": 57442,
-    "Per Capita Income": 26040.333333333332
+    "Total Population": 167936,
+    "Poverty Count": 24707,
+    "Location": [37.66, -122.08]
   },
   {
+    "": 13,
     "City": "HERCULES",
+    "Median Age": 37.4,
+    "Average Income": 97269,
+    "Per Capita Income": 36802,
     "Number of facilities": 1,
     "Total Population": 24454,
-    "Median Age": 37.4,
-    "Average Household Income": 97269,
     "Poverty Count": 1434,
-    "Per Capita Income": 36802
+    "Location": [38.01, -122.28]
   },
   {
+    "": 14,
     "City": "LARKSPUR",
-    "Number of facilities": 2,
-    "Total Population": 13774,
     "Median Age": 46.5,
-    "Average Household Income": 97723,
-    "Poverty Count": 424,
-    "Per Capita Income": 78588
-  },
-  {
-    "City": "LOS ALTOS",
+    "Average Income": 97723,
+    "Per Capita Income": 78588,
     "Number of facilities": 2,
-    "Total Population": 44698,
+    "Total Population": 6887,
+    "Poverty Count": 212,
+    "Location": [37.93, -122.53]
+  },
+  {
+    "": 15,
+    "City": "LOS ALTOS",
     "Median Age": 46.1,
-    "Average Household Income": 167384,
-    "Poverty Count": 978,
-    "Per Capita Income": 85227
+    "Average Income": 167384,
+    "Per Capita Income": 85227,
+    "Number of facilities": 2,
+    "Total Population": 22349,
+    "Poverty Count": 489,
+    "Location": [37.38, -122.11]
   },
   {
+    "": 16,
     "City": "LOS GATOS",
+    "Median Age": 45.6,
+    "Average Income": 136850.5,
+    "Per Capita Income": 75070,
     "Number of facilities": 14,
-    "Total Population": 323677,
-    "Median Age": 44.57142857142856,
-    "Average Household Income": 128457.64285714286,
-    "Poverty Count": 12101,
-    "Per Capita Income": 68584.85714285714
+    "Total Population": 39455,
+    "Poverty Count": 1559,
+    "Location": [37.23, -121.96]
   },
   {
+    "": 17,
     "City": "MARTINEZ",
-    "Number of facilities": 5,
-    "Total Population": 240090,
     "Median Age": 42.5,
-    "Average Household Income": 75672,
-    "Poverty Count": 20745,
-    "Per Capita Income": 36343
+    "Average Income": 75672,
+    "Per Capita Income": 36343,
+    "Number of facilities": 5,
+    "Total Population": 48018,
+    "Poverty Count": 4149,
+    "Location": [38.01, -122.13]
   },
   {
+    "": 18,
     "City": "MENLO PARK",
-    "Number of facilities": 3,
-    "Total Population": 121116,
     "Median Age": 39.2,
-    "Average Household Income": 115444,
-    "Poverty Count": 7836,
-    "Per Capita Income": 69074
+    "Average Income": 115444,
+    "Per Capita Income": 69074,
+    "Number of facilities": 3,
+    "Total Population": 40372,
+    "Poverty Count": 2612,
+    "Location": [37.45, -122.18]
   },
   {
+    "": 19,
     "City": "MILLBRAE",
+    "Median Age": 45.4,
+    "Average Income": 88451,
+    "Per Capita Income": 42042,
     "Number of facilities": 1,
     "Total Population": 21867,
-    "Median Age": 45.4,
-    "Average Household Income": 88451,
     "Poverty Count": 1234,
-    "Per Capita Income": 42042
+    "Location": [37.59, -122.38]
   },
   {
+    "": 20,
     "City": "MOUNTAIN VIEW",
+    "Median Age": 35.95,
+    "Average Income": 95750,
+    "Per Capita Income": 56976,
     "Number of facilities": 35,
-    "Total Population": 1096483,
-    "Median Age": 35.71515151515153,
-    "Average Household Income": 99155.30303030302,
-    "Poverty Count": 94496,
-    "Per Capita Income": 54704.545454545456
+    "Total Population": 81071,
+    "Poverty Count": 4255,
+    "Location": [37.38, -122.08]
   },
   {
+    "": 21,
     "City": "NAPA",
-    "Number of facilities": 6,
-    "Total Population": 400944,
     "Median Age": 40.6,
-    "Average Household Income": 72286,
-    "Poverty Count": 42000,
-    "Per Capita Income": 35746
+    "Average Income": 72286,
+    "Per Capita Income": 35746,
+    "Number of facilities": 6,
+    "Total Population": 66824,
+    "Poverty Count": 7000,
+    "Location": [38.29, -122.28]
   },
   {
+    "": 22,
     "City": "NEWARK",
+    "Median Age": 37.3,
+    "Average Income": 85847,
+    "Per Capita Income": 31056,
     "Number of facilities": 1,
     "Total Population": 43139,
-    "Median Age": 37.3,
-    "Average Household Income": 85847,
     "Poverty Count": 3310,
-    "Per Capita Income": 31056
+    "Location": [37.53, -122.04]
   },
   {
+    "": 23,
     "City": "NOVATO",
-    "Number of facilities": 6,
-    "Total Population": 108642,
     "Median Age": 44.4,
-    "Average Household Income": 83026,
-    "Poverty Count": 6054,
-    "Per Capita Income": 44454
+    "Average Income": 83026,
+    "Per Capita Income": 44454,
+    "Number of facilities": 6,
+    "Total Population": 18107,
+    "Poverty Count": 1009,
+    "Location": [38.1, -122.56]
   },
   {
+    "": 24,
     "City": "OAKLAND",
+    "Median Age": 37.56666667,
+    "Average Income": 54454.44444,
+    "Per Capita Income": 36954.77778,
     "Number of facilities": 46,
-    "Total Population": 1296272,
-    "Median Age": 37.37826086956523,
-    "Average Household Income": 62674.67391304348,
-    "Poverty Count": 199155,
-    "Per Capita Income": 42411.217391304344
+    "Total Population": 467121,
+    "Poverty Count": 93424,
+    "Location": [37.8, -122.27]
   },
   {
+    "": 25,
     "City": "PALO ALTO",
+    "Median Age": 39.95,
+    "Average Income": 113222,
+    "Per Capita Income": 89137.5,
     "Number of facilities": 18,
-    "Total Population": 194576,
-    "Median Age": 40.211111111111116,
-    "Average Household Income": 114249.88888888889,
-    "Poverty Count": 11824,
-    "Per Capita Income": 90027.11111111111
+    "Total Population": 20217,
+    "Poverty Count": 1215,
+    "Location": [37.44, -122.14]
   },
   {
+    "": 26,
     "City": "PETALUMA",
+    "Median Age": 40.7,
+    "Average Income": 80645,
+    "Per Capita Income": 33411,
     "Number of facilities": 1,
     "Total Population": 36785,
-    "Median Age": 40.7,
-    "Average Household Income": 80645,
     "Poverty Count": 3037,
-    "Per Capita Income": 33411
+    "Location": [38.23, -122.63]
   },
   {
+    "": 27,
     "City": "PIEDMONT",
+    "Median Age": 38.8,
+    "Average Income": 72848,
+    "Per Capita Income": 57078,
     "Number of facilities": 1,
     "Total Population": 29978,
-    "Median Age": 38.8,
-    "Average Household Income": 72848,
     "Poverty Count": 2369,
-    "Per Capita Income": 57078
+    "Location": [37.82, -122.23]
   },
   {
+    "": 28,
     "City": "PINOLE",
+    "Median Age": 42.8,
+    "Average Income": 76960,
+    "Per Capita Income": 34647,
     "Number of facilities": 1,
     "Total Population": 18612,
-    "Median Age": 42.8,
-    "Average Household Income": 76960,
     "Poverty Count": 1738,
-    "Per Capita Income": 34647
+    "Location": [38, -122.29]
   },
   {
+    "": 29,
     "City": "PLEASANT HILL",
+    "Median Age": 42.3,
+    "Average Income": 77485,
+    "Per Capita Income": 43827,
     "Number of facilities": 1,
     "Total Population": 33923,
-    "Median Age": 42.3,
-    "Average Household Income": 77485,
     "Poverty Count": 3051,
-    "Per Capita Income": 43827
+    "Location": [37.94, -122.06]
   },
   {
+    "": 30,
     "City": "PLEASANTON",
+    "Median Age": 38.5,
+    "Average Income": 119849,
+    "Per Capita Income": 49641,
     "Number of facilities": 1,
     "Total Population": 30949,
-    "Median Age": 38.5,
-    "Average Household Income": 119849,
     "Poverty Count": 1559,
-    "Per Capita Income": 49641
+    "Location": [37.66, -121.87]
   },
   {
+    "": 31,
     "City": "REDWOOD CITY",
+    "Median Age": 37.3,
+    "Average Income": 85903.66667,
+    "Per Capita Income": 43988.33333,
     "Number of facilities": 22,
-    "Total Population": 650708,
-    "Median Age": 37.67727272727272,
-    "Average Household Income": 90166.95454545454,
-    "Poverty Count": 79240,
-    "Per Capita Income": 46973.045454545456
+    "Total Population": 95815,
+    "Poverty Count": 10514,
+    "Location": [37.48, -122.23]
   },
   {
+    "": 32,
     "City": "RICHMOND",
+    "Median Age": 32.85,
+    "Average Income": 44645.5,
+    "Per Capita Income": 21476.5,
     "Number of facilities": 5,
-    "Total Population": 179635,
-    "Median Age": 33.36,
-    "Average Household Income": 45568.6,
-    "Poverty Count": 39369,
-    "Per Capita Income": 21980.4
+    "Total Population": 99820,
+    "Poverty Count": 15728,
+    "Location": [37.93, -122.34]
   },
   {
+    "": 33,
     "City": "SAINT HELENA",
+    "Median Age": 47.3,
+    "Average Income": 83551,
+    "Per Capita Income": 53798,
     "Number of facilities": 3,
-    "Total Population": 28614,
-    "Median Age": 47.29999999999999,
-    "Average Household Income": 83551,
-    "Poverty Count": 1668,
-    "Per Capita Income": 53798
+    "Total Population": 9538,
+    "Poverty Count": 556,
+    "Location": [38.5, -122.47]
   },
   {
-    "City": "SF (THE CITY)",
+    "": 34,
+    "City": "SAN FRANCISCO",
+    "Median Age": 39.81578947,
+    "Average Income": 79024.05263,
+    "Per Capita Income": 62400.26316,
     "Number of facilities": 168,
-    "Total Population": 5735728,
-    "Median Age": 38.711875000000006,
-    "Average Household Income": 82786.225,
-    "Poverty Count": 776863,
-    "Per Capita Income": 64700.68125
+    "Total Population": 615187,
+    "Poverty Count": 81117,
+    "Location": [37.77, -122.41]
   },
   {
+    "": 35,
     "City": "SAN JOSE",
+    "Median Age": 36.16666667,
+    "Average Income": 80936,
+    "Per Capita Income": 40913.33333,
     "Number of facilities": 30,
-    "Total Population": 1114384,
-    "Median Age": 36.06666666666667,
-    "Average Household Income": 72294.2,
-    "Poverty Count": 150952,
-    "Per Capita Income": 38940.933333333334
+    "Total Population": 1170550,
+    "Poverty Count": 136270,
+    "Location": [37.33, -121.88]
   },
   {
+    "": 36,
     "City": "SAN LEANDRO",
-    "Number of facilities": 5,
-    "Total Population": 196125,
     "Median Age": 34,
-    "Average Household Income": 51518,
-    "Poverty Count": 32765,
-    "Per Capita Income": 23200
+    "Average Income": 51518,
+    "Per Capita Income": 23200,
+    "Number of facilities": 5,
+    "Total Population": 90225,
+    "Poverty Count": 6553,
+    "Location": [37.72, -122.15]
   },
   {
+    "": 37,
     "City": "SAN MATEO",
+    "Median Age": 39.63333333,
+    "Average Income": 89240,
+    "Per Capita Income": 47090.33333,
     "Number of facilities": 10,
-    "Total Population": 362595,
-    "Median Age": 37.85000000000001,
-    "Average Household Income": 79840.8,
-    "Poverty Count": 30905,
-    "Per Capita Income": 39864.5
+    "Total Population": 99700,
+    "Poverty Count": 6960,
+    "Location": [37.56, -122.32]
   },
   {
+    "": 38,
     "City": "SAN PABLO",
+    "Median Age": 33.7,
+    "Average Income": 52976,
+    "Per Capita Income": 22112,
     "Number of facilities": 1,
     "Total Population": 59720,
-    "Median Age": 33.7,
-    "Average Household Income": 52976,
     "Poverty Count": 10159,
-    "Per Capita Income": 22112
+    "Location": [37.96, -122.34]
   },
   {
+    "": 39,
     "City": "SAN RAFAEL",
+    "Median Age": 46.4,
+    "Average Income": 88646,
+    "Per Capita Income": 48387,
     "Number of facilities": 11,
-    "Total Population": 334521,
-    "Median Age": 46.399999999999984,
-    "Average Household Income": 88646,
-    "Poverty Count": 21241,
-    "Per Capita Income": 48387
+    "Total Population": 30411,
+    "Poverty Count": 1931,
+    "Location": [37.97, -122.53]
   },
   {
+    "": 40,
     "City": "SAN RAMON",
+    "Median Age": 39.6,
+    "Average Income": 119623,
+    "Per Capita Income": 49034,
     "Number of facilities": 10,
-    "Total Population": 349370,
-    "Median Age": 39.60000000000001,
-    "Average Household Income": 119623,
-    "Poverty Count": 9610,
-    "Per Capita Income": 49034
+    "Total Population": 34937,
+    "Poverty Count": 961,
+    "Location": [37.77, -121.97]
   },
   {
+    "": 41,
     "City": "SANTA CLARA",
+    "Median Age": 35.15,
+    "Average Income": 84067,
+    "Per Capita Income": 39004.5,
     "Number of facilities": 8,
-    "Total Population": 409121,
-    "Median Age": 35.8625,
-    "Average Household Income": 96394.75,
-    "Poverty Count": 30131,
-    "Per Capita Income": 42366.375
+    "Total Population": 127209,
+    "Poverty Count": 8237,
+    "Location": [37.35, -121.95]
   },
   {
+    "": 42,
     "City": "SANTA ROSA",
+    "Median Age": 39.2,
+    "Average Income": 62688.25,
+    "Per Capita Income": 32271.5,
     "Number of facilities": 22,
-    "Total Population": 803766,
-    "Median Age": 39.722727272727276,
-    "Average Household Income": 64019.59090909091,
-    "Poverty Count": 88681,
-    "Per Capita Income": 32915.72727272727
+    "Total Population": 142716,
+    "Poverty Count": 17342,
+    "Location": [38.44, -122.71]
   },
   {
+    "": 43,
     "City": "SEBASTOPOL",
+    "Median Age": 50.3,
+    "Average Income": 68223,
+    "Per Capita Income": 40149,
     "Number of facilities": 1,
     "Total Population": 29381,
-    "Median Age": 50.3,
-    "Average Household Income": 68223,
     "Poverty Count": 2675,
-    "Per Capita Income": 40149
+    "Location": [38.4, -122.82]
   },
   {
+    "": 44,
     "City": "SONOMA",
-    "Number of facilities": 5,
-    "Total Population": 194000,
     "Median Age": 44.9,
-    "Average Household Income": 58785,
-    "Poverty Count": 23510,
-    "Per Capita Income": 40040
+    "Average Income": 58785,
+    "Per Capita Income": 40040,
+    "Number of facilities": 5,
+    "Total Population": 38800,
+    "Poverty Count": 4702,
+    "Location": [38.29, -122.45]
   },
   {
-    "City": "SOUTH SF",
-    "Number of facilities": 2,
-    "Total Population": 130400,
+    "": 45,
+    "City": "SOUTH SAN FRANCISCO",
     "Median Age": 37.8,
-    "Average Household Income": 77058,
-    "Poverty Count": 9126,
-    "Per Capita Income": 31603
+    "Average Income": 77058,
+    "Per Capita Income": 31603,
+    "Number of facilities": 2,
+    "Total Population": 65200,
+    "Poverty Count": 4563,
+    "Location": [37.65, -122.4]
   },
   {
+    "": 46,
     "City": "UNION CITY",
-    "Number of facilities": 4,
-    "Total Population": 282748,
     "Median Age": 36.5,
-    "Average Household Income": 82083,
-    "Poverty Count": 23620,
-    "Per Capita Income": 29685
+    "Average Income": 82083,
+    "Per Capita Income": 29685,
+    "Number of facilities": 4,
+    "Total Population": 70687,
+    "Poverty Count": 5905,
+    "Location": [37.59, -122.04]
   },
   {
+    "": 47,
     "City": "VACAVILLE",
+    "Median Age": 38.2,
+    "Average Income": 76517.5,
+    "Per Capita Income": 31948,
     "Number of facilities": 11,
-    "Total Population": 664359,
-    "Median Age": 38.07272727272727,
-    "Average Household Income": 74650.09090909091,
-    "Poverty Count": 54149,
-    "Per Capita Income": 29522.81818181818
+    "Total Population": 100728,
+    "Poverty Count": 8724,
+    "Location": [38.35, -121.98]
   },
   {
+    "": 48,
     "City": "VALLEJO",
+    "Median Age": 37.1,
+    "Average Income": 48943.5,
+    "Per Capita Income": 21852.5,
     "Number of facilities": 8,
-    "Total Population": 257609,
-    "Median Age": 37.025,
-    "Average Household Income": 50724.625,
-    "Poverty Count": 52590,
-    "Per Capita Income": 21690.875
+    "Total Population": 65627,
+    "Poverty Count": 13994,
+    "Location": [38.1, -122.25]
   },
   {
+    "": 49,
     "City": "WALNUT CREEK",
+    "Median Age": 47.95,
+    "Average Income": 85552.75,
+    "Per Capita Income": 51345,
     "Number of facilities": 24,
-    "Total Population": 580779,
-    "Median Age": 46.19583333333335,
-    "Average Household Income": 105948.33333333333,
-    "Poverty Count": 28393,
-    "Per Capita Income": 54482.708333333336
+    "Total Population": 83497,
+    "Poverty Count": 4501,
+    "Location": [37.91, -122.06]
   }
 ];
 
