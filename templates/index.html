@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bay Area Healthcare Facilities</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <link rel="stylesheet", type="text/css" href="{{ url_for('static', filename='css/p3style.css') }}">
+
+
+    
+</head>
+<body>
+    <div class="container">
+        <div id="nav-placeholder">
+
+        </div>
+
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("/p3navbar");
+            });
+        </script>
+
+    
+    <div class="container">
+    <h3>Bay Area Healthcare Facilities Investigated</h3>
+        <p>The aim of this project was to analyse CMS Healthcare Data for the Bay Area, and compare healthcare outcomes and facilities' YELP ratings with the availability of facilities and income levels.</p>
+        </p>
+    </div>
+
+</body>
+
+</html>
