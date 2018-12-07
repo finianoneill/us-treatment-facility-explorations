@@ -1,4 +1,3 @@
-
 import os
 
 import pandas as pd
@@ -32,40 +31,10 @@ print(Base.classes)
 Treatment_Facilities = Base.classes.treatment_facilities
 
 
-@app.before_first_request
-def setup():
-    # Recreate database each time for demo
-    db.drop_all()
-    db.create_all()
-
-
-@app.route("/charts")
-def charts():
-    """Show the heatmap."""
-    return render_template("charts.html")
-
-@app.route("/p3dropdown")
-def dropdown():
-    """Hosts the dd html so JQuery works"""
-    return render_template("p3dropdown.html")
-
-@app.route("/p3navbar")
-def navbar():
-    """Hosts the Navbar html so JQuery works"""
-    return render_template("p3navbar.html")
-
-
 @app.route("/")
 def index():
     """Return the homepage."""
-    return render_template("p3index.html")
-
-
-@app.route("/maps")
-def map():
-    """Show the heatmap."""
-    return render_template("p3maps.html")
-
+    return render_template("index.html")
 
 
 @app.route("/facilities_data")
@@ -90,7 +59,7 @@ def facilities():
         current_row["lng"] = row.lng
 
         json_list.append(current_row)
-
+    
     # Return all of the data from the dataframe
     return jsonify(json_list)
 
@@ -111,8 +80,7 @@ def treatment_facility(facility_id):
         Treatment_Facilities.lng,
     ]
 
-    results = db.session.query(
-        *sel).filter(Treatment_Facilities.id == facility_id).all()
+    results = db.session.query(*sel).filter(Treatment_Facilities.id == facility_id).all()
 
     # Create a dictionary entry for each row of metadata information
     treatment_facility = {}
@@ -134,3 +102,5 @@ def treatment_facility(facility_id):
 
 if __name__ == "__main__":
     app.run()
+
+#test
