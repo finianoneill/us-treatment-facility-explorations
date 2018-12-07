@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+
+    </div>
+    <ul class="nav navbar-nav">
+
+
+        <!-- INSERT HOME PAGE REF -->
+        <li class="active"></li>
+        <li><a href="http://127.0.0.1:5000/"><strong>HOME</strong></a></li>
+        
+        <li><a href="http://127.0.0.1:5000/data">Data</a></li>
+        <li><a href="http://127.0.0.1:5000/facilities_data.html">Data JSON</a></li>
+<li>
+    <form>
+<div class="tipue_search_group" id="tipue_search_content" style="padding-top: 10px;">
+            <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button
+                type="submit" class="tipue_search_button">
+                <div class="tipue_search_icon">&#9906;</div>
+            </button>
+        </div>
+    </form>
+
+    <div id="tipue_search_content"></div>
+
+
+}
+
+
+
+        <script>
+            $(document).ready(function () {
+                $('#tipue_search_input').tipuesearch();
+            });
+        </script>
+
+
+</nav>
+   
