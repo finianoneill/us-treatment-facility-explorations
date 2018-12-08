@@ -31,11 +31,33 @@ print(Base.classes)
 Treatment_Facilities = Base.classes.treatment_facilities
 
 
+@app.before_first_request
+def setup():
+    # Recreate database each time for demo
+    db.drop_all()
+    db.create_all()
+
+
+@app.route("/p3navbar")
+def navbar():
+    """Hosts the Navbar html the script is universal"""
+    return render_template("p3navbar.html")
+
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
 
+
+@app.route("/maps")
+def maps():
+    """Return the maps."""
+    return render_template("maps.html")
+
+@app.route("/charts")
+def charts():
+    """Return the charts."""
+    return render_template("charts.html")
 
 @app.route("/facilities_data")
 def facilities():
@@ -102,5 +124,3 @@ def treatment_facility(facility_id):
 
 if __name__ == "__main__":
     app.run()
-
-#test
