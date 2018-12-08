@@ -7,22 +7,25 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-
 #################################################
 # Database Setup
 #################################################
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/treatment_facilities.sqlite"
+
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
 Base = automap_base()
+
 # reflect the tables
 Base.prepare(db.engine, reflect=True)
 
@@ -30,13 +33,17 @@ Base.prepare(db.engine, reflect=True)
 print(Base.classes)
 Treatment_Facilities = Base.classes.treatment_facilities
 
+# create connection to second database
+db2 = create_engine("sqlite:///db/census_data.sqlite")
+Base2 = automap_base()
+Base2.prepare(db2, reflect=True)
+Census_Data = Base2.classes.census_data
 
 @app.before_first_request
 def setup():
     # Recreate database each time for demo
     db.drop_all()
     db.create_all()
-
 
 @app.route("/p3navbar")
 def navbar():
@@ -79,6 +86,33 @@ def facilities():
         current_row["zipCode"] = row.zipCode
         current_row["lat"] = row.lat
         current_row["lng"] = row.lng
+
+        json_list.append(current_row)
+    
+    # Return all of the data from the dataframe
+    return jsonify(json_list)
+
+@app.route("/census_data")
+def census():
+    """Return all of the facilities data."""
+
+    # Perform sql query to pull all treatment facility data
+    DB2Session = sessionmaker(db2)
+    db2session = DB2Session()
+    results = db2session.query(Census_Data).all()
+
+    json_list = []
+    for row in results:
+        current_row = {}
+        current_row["id"] = row.id
+        current_row["City"] = row.City
+        current_row["Median_Age"] = row.Median_Age
+        current_row["Average_Income"] = row.Average_Income
+        current_row["Per_Capita_Income"] = row.Per_Capita_Income
+        current_row["Number_of_facilities"] = row.Number_of_facilities
+        current_row["Total_Population"] = row.Total_Population
+        current_row["Poverty_Count"] = row.Poverty_Count
+        current_row["Location"] = row.Location
 
         json_list.append(current_row)
     
