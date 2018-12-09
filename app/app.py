@@ -36,10 +36,10 @@ print(Base.classes)
 Treatment_Facilities = Base.classes.treatment_facilities
 
 # create connection to second database
-db2 = create_engine("sqlite:///db/census_data.sqlite")
-Base2 = automap_base()
+#db2 = create_engine("sqlite:///db/census_data.sqlite")
+#Base2 = automap_base()
 #Base2.prepare(db2, reflect=True)
-Census_Data = Base2.classes.census_data
+#Census_Data = Base2.classes.census_data
 
 @app.before_first_request
 def setup():
