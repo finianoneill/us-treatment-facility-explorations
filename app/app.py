@@ -19,6 +19,8 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
+# heroku_db "DATABASE_URI" = "postgres://usnbccbnslvlhm:81b54396ff068dcde017e327110f600d4d004a63c3e21b43215afbbe23bbe8f0@ec2-54-197-234-33.compute-1.amazonaws.com:5432/d4prqn1vr17kt"
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/treatment_facilities.sqlite"
 
 db = SQLAlchemy(app)
