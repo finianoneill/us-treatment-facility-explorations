@@ -34,12 +34,7 @@ Base.prepare(db.engine, reflect=True)
 # Save references to each table
 print(Base.classes)
 Treatment_Facilities = Base.classes.treatment_facilities
-
-# create connection to second database
-#db2 = create_engine("sqlite:///db/census_data.sqlite")
-#Base2 = automap_base()
-#Base2.prepare(db2, reflect=True)
-#Census_Data = Base2.classes.census_data
+Census_Data = Base.classes.census_data
 
 @app.before_first_request
 def setup():
@@ -103,9 +98,7 @@ def census():
     """Return all of the facilities data."""
 
     # Perform sql query to pull all treatment facility data
-    DB2Session = sessionmaker(db2)
-    db2session = DB2Session()
-    results = db2session.query(Census_Data).all()
+    results = db.session.query(Census_Data).all()
 
     json_list = []
     for row in results:
