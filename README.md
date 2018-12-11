@@ -7,7 +7,7 @@
 The main objective of the project was to find the distribution of treatment facilities/hospitals across the Bay Area. The total population of Bay Area is approximately 7 million and through this project we wanted to look at the distribution of hospitals relative to the population. Our specific objectives were as follows:
 1.     Quantify healthcare facilities/hospital densities within different cities in the Bay.
 2.     Compare hospital densities across different cities.
-3.     Compare the population characteristics of different regions (total population, poverty count, median income, median            age).
+3.     Compare the population characteristics of different regions (total population, poverty count, median income, median age).
  
 ## Tools used 
  
