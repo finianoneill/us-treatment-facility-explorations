@@ -57,6 +57,10 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+    """Return the about page"""
+    return render_template("about.html")
 
 @app.route("/maps")
 def maps():

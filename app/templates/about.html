@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="static/css/style.css">
+    
+      <title>Healthcare Facility Heatmaps</title>   
+  </head>
+  <body>
+
+      <nav class="navbar navbar-inverse">
+          <div class="container">
+              
+              <div class="navbar-header">
+                  <a class="navbar-brand logo" href="/">
+                  <span class="nav-color">HOME</span></a>
+          </div>
+  
+            <div class="navbar-header">
+                <a class="navbar-brand logo" href="about">
+                <span class="nav-color">About</span></a>
+            </div>
+
+              <div class="nav navbar-nav navbar-right">
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Visualizations<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="charts">Charts</a></li>
+                          <li><a href="maps">Maps</a></li>
+                          <li><a href="facilities_data">Data JSON</a></li>
+                      </ul>
+                  </li>                         
+              </div>
+          </div>      
+      </nav>
+    
+
+    <!-- API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="static/js/treatment_facility_heatmap.js"></script>
+
+    <div class="container">
+        <h3>Introduction</h3>
+            <p>The main objective of the project was to find the distribution of treatment facilities/hospitals across the Bay Area. The total population of Bay Area is approximately 7 million and through this project we wanted to look at the distribution of hospitals relative to the population. Our specific objectives were as follows:
+            </p>
+            <ol>
+            <li>Quantify healthcare facilities/hospital densities within different cities in the Bay.</li>
+            <li>Compare hospital densities across different cities.</li>
+            <li>Compare the population characteristics of different regions (total population, poverty count, median income, median age).</li>
+            </ol>
+        <h3>Tools Used</h3>
+            <ol>
+            <li><a href="https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse">Google Maps Reverse Geocoding</a></li>
+            <li><a href="https://www.yelp.com/developers">Yelp API</a></li>
+            <li><a href="https://www.census.gov/data/developers/data-sets.html">Census API</a></li>
+            <li><a href="https://jupyter.org/">Jupyter Notebook</a></li>
+            <li><a href="http://flask.pocoo.org/docs/1.0/api/">Flask</a></li>
+            <li><a href="https://www.sqlite.org/">SQLite Database</a></li>
+            <li>Javascript Libraries:</li>
+            <ol><li><a href="https://leafletjs.com/">Leaflet.js</a></li>
+            <li><a href="https://c3js.org/">C3.js (based on D3.js)</a></li>
+            <li><a href="https://getbootstrap.com/javascript/">Bootstrap</a></li>
+            </ol>
+            </ol>
+        
+            <h3>Extracting, Loading and Sorting Data</h3>
+            <p>We downloaded a CSV file from <a href="https://www.cms.gov/">CMS.gov</a> which gave us information about all Medicare, Medicaid, or private insurer accredited health institutions across the US. We narrowed down this list of healthcare facilities to just Bay Area Cities. We further used Yelp API business search feature to find ratings for businesses listed as Hospitals. With the help of reverse geocoding, we were able to find the latitude and longitude for different facilities from the zip code. Finally, by querying census API key we were able to get demographic information such as total population, household income, poverty count, median age by ZIP code.</p>
+
+            <h3>Visualizing Data using HTML/CSS/Javascript</h3>
+            <p>We used Javascript to create a function that would allow us to iterate through the data in our SQLite server and thus visualize the data. We created an app with the Flask API to serve the HTML page. To make the website accessible without local dependencies, we deployed the Flask app to Heroku.</p>
+
+            <h3><a href="https://github.com/finianoneill/us-treatment-facility-explorations">GitHub Repo Link</a></h3>
+            
+            <h3>A Couple of Silly Images</h3>
+            <a href="https://media.giphy.com/media/kGUSYe1ycX1gQ/giphy.gif">    
+                <img src="https://media.giphy.com/media/kGUSYe1ycX1gQ/giphy.gif" width="750" height="450"/>
+            </a>
+            <a href="https://scontent-lax3-1.xx.fbcdn.net/v/t1.15752-9/48275448_2341274459247905_6741063965503127552_n.jpg?_nc_cat=103&_nc_ht=scontent-lax3-1.xx&oh=85371d359ded8b0a813f5c2e09993371&oe=5C90E3BA">    
+                <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.15752-9/48275448_2341274459247905_6741063965503127552_n.jpg?_nc_cat=103&_nc_ht=scontent-lax3-1.xx&oh=85371d359ded8b0a813f5c2e09993371&oe=5C90E3BA" width="450" height="750"/>
+            </a>
+        </div>
+        
+  </body>
+
+</html>
